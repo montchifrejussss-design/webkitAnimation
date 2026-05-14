@@ -1,0 +1,137 @@
+/* IMPORTATION DE FONT GOOGLE "FACULTATIF" */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700;800&display=swap');
+*{
+    border: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+body{
+    background: #333;
+}
+.container{
+    align-items: center;
+    border: white solid 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    height: 100dvh;
+    justify-content: center;
+}
+.tech{
+    height: clamp(8rem, 20vw, 35rem);
+    object-fit: cover;
+    width: clamp(8rem, 20vw, 35rem);
+    position: relative;
+    padding-bottom: 2px;
+}
+.tech::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, rgb(251, 59, 59), yellow);
+}
+.tech img{
+    height: 100%;
+    width: 100%;
+}
+.techName{
+    justify-items: center;
+    text-align: center;
+    width: 100%;
+}
+.techName h1{
+    animation: moov 10s infinite linear;
+    background: linear-gradient(50deg, white, yellow, red, #EE4500 ,yellow, green);
+    background-size: 200%;
+    font-family: 'Oswald', sans-serif; 
+    font-weight: 900; 
+    font-size: clamp(3.2rem, 11vw, 12rem);
+    width: 94%;
+    white-space: nowrap;
+    transition: 1.5s ease;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+@keyframes moov {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.container button{
+    background: transparent;
+    border: 8px solid rgb(11, 202, 11);
+    border-radius: 25px;
+    box-shadow: white 2px 2px 5px;
+    color: #ddd;
+    font-size: 2.6rem;
+    margin-top: 9px;
+    padding: 12px 6rem;
+    text-shadow: black 3px 3px 10px;
+}
+button:active {
+    transform: scale(0.98);
+    font-weight: bold;
+}
+button:hover{
+    background: black;
+    color: white;
+    /* font-weight: bold; */
+    transform: scale(1.01);
+}
+@media (min-width : 768px) {
+    .container{
+        display: grid;
+        gap: 22px;
+        grid-template-columns: repeat(2, 1fr 3fr);
+        justify-content: center;
+        position: absolute;
+    }
+    .tech{
+        margin: 8px;
+        margin-left: 7rem;
+        padding-top: 2px;
+        padding-bottom: none;
+    }
+    .tech::after {
+    content: "";
+    position: absolute;
+    left: 20rem;
+    bottom: 0;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(to top, rgb(251, 59, 59), yellow);
+}
+    .techName{
+        margin: 8px;
+    }
+    .techName h1{
+        white-space: nowrap;
+        width: 100%;
+    }
+    .container button{
+        padding: 4px 6rem;
+        position: relative;
+        right: 24rem;
+        top: 18rem;
+        white-space: nowrap;
+    }
+    button:hover{
+        background: black;
+        color: white;
+        transform: scale(1.03);
+    }
+}
